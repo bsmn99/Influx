@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sample.foo.databindingsample.SecondActivity">
+
+    <data>
+        <variable
+            name="mainItemModel"
+            type="com.influx.test.Models.MainItemModel" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/cardbg"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.androidnetworking.widget.ANImageView
+            android:id="@+id/itemImage"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/item_image"
+            android:layout_height="120dp"/>
+        <com.androidnetworking.widget.ANImageView
+            android:id="@+id/vegClassImage"
+            android:layout_width="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/dishtype"
+            android:layout_height="20dp"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/subItemView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_height="match_parent">
+            <RadioButton
+                android:id="@+id/normal"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:button="@null"
+                android:checked="true"
+                android:textColor="@color/subitemtextcolor"
+                android:background="@drawable/itembg"
+                android:visibility="gone"
+                android:text="@string/normal"/>
+
+            <RadioButton
+                android:id="@+id/regular"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:button="@null"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/itembg"
+                android:textColor="@color/subitemtextcolor"
+                android:visibility="gone"
+                android:text="@string/regular"/>
+
+            <RadioButton
+                android:id="@+id/large"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:button="@null"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/itembg"
+                android:textColor="@color/subitemtextcolor"
+                android:visibility="gone"
+                android:text="@string/large"/>
+        </RadioGroup>
+
+        
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/itemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:typeface="sans"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#A4A4A4"
+                android:text="@{mainItemModel.Name}" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/itemCurrency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:typeface="sans"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:textColor="#BEBEBE"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/itemPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:typeface="sans"
+                    android:paddingLeft="5dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:textColor="#BEBEBE"
+                    android:text="" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/minusItem"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_minus_symbol"/>
+
+            <TextView
+                android:id="@+id/noOfItems"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="0" />
+
+            <ImageView
+                android:id="@+id/plusItem"
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_add"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</layout>

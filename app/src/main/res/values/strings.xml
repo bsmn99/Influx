@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">InfluxTest</string>
+    <string name="item_image">Item Image</string>
+    <string name="normal">NORMAL</string>
+    <string name="regular">REGULAR</string>
+    <string name="large">LARGE</string>
+    <string name="currency">Currency</string>
+    <string name="pay">PAY</string>
+    <string name="f_b"><![CDATA[F&B]]></string>
+    <string name="skip">SKIP</string>
+    <string name="summary"><![CDATA[F&B Summary]]></string>
+    <string name="dishtype">Type of Dish</string>
+</resources>

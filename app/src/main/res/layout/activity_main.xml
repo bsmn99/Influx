@@ -1,0 +1,128 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#000000"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:src="@drawable/ic_left_arrow" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/f_b"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textSize="22sp"
+            android:textColor="@android:color/white"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/skip"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:textColor="#787878"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/viewpageContainer"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="scrollable"/>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FDED01"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom">
+
+            <ScrollView
+                android:id="@+id/expandOrderView"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="180dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:padding="5dp"
+                        android:text="@string/summary" />
+
+                    <LinearLayout
+                        android:id="@+id/orderContainer"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content">
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom">
+           <TextView
+               android:id="@+id/totalAmount"
+               android:layout_width="wrap_content"
+               android:text="0"
+               android:gravity="center|left"
+               android:padding="5dp"
+               android:drawableRight="@drawable/expand_more"
+               android:textColor="#543B00"
+               android:layout_alignParentLeft="true"
+               android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/clickTopay"
+                android:layout_width="wrap_content"
+                android:text="@string/pay"
+                android:gravity="center"
+                android:padding="5dp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:textColor="#0E0E10"
+                android:layout_alignParentRight="true"
+                android:layout_height="match_parent" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
